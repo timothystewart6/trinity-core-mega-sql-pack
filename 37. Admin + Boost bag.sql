@@ -1,0 +1,3 @@
+REPLACE INTO `item_template` (entry,class,name,displayid,Quality,InventoryType,RequiredLevel,maxcount,stackable,ContainerSlots,StatsCount,stat_type1,stat_value1,stat_type2,stat_value2,stat_type3,stat_value3,stat_type4,stat_value4,stat_type5,stat_value5,stat_type6,stat_value6,stat_type7,stat_value7,description) VALUES
+ (100220,1,"|cffDF013AAdmin Bag",	50459,5,18,80,4,1,36,7,7,50,4,50,3,50,5,50,6,50,38,200,45,100,"Only for Admin"),
+ (100210,1,"|cffBCA9F5Boost Bag",	50459,5,18,80,4,1,36,7,7,10,4,10,3,10,5,10,6,10,38,100,45,50,"");
