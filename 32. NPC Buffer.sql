@@ -1,12 +1,14 @@
 SET @BUFFNPC := 190005;
 SET @GOPTION := 50030;
+SET @NAME := "Gwydion";
+SET @SUBNAME := "Buff Master";
 
 DELETE FROM gossip_menu_option WHERE menu_id = @GOPTION;
 DELETE FROM smart_scripts WHERE entryorguid = @BUFFNPC;
 DELETE FROM creature_template WHERE entry = @BUFFNPC;
 
-INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, Health_mod, Mana_mod, Armor_mod, faction, npcflag, speed_walk, speed_run, scale, rank, dmg_multiplier, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName) VALUES
-(@BUFFNPC, '21572', "BUFFER", "Buff NPC", 'Directions', '50000', 71, 71, 1.56, 1.56, 1.56, 35, 3, 1, 1.14286, 1, 1, 1, 1, 2, 7, 138936390, 3, 1, 2, 'SmartAI');
+INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, HealthModifier, ManaModifier, ArmorModifier, faction, npcflag, speed_walk, speed_run, scale, rank, DamageModifier, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName) VALUES
+(@BUFFNPC, '21572', @NAME, @SUBNAME, 'Directions', '50000', 71, 71, 1.56, 1.56, 1.56, 35, 3, 1, 1.14286, 1, 1, 1, 1, 2, 7, 138936390, 3, 1, 2, 'SmartAI');
 
 SET @GID := IFNULL((SELECT id FROM gossip_menu_option WHERE menu_id = @GOPTION ORDER BY id DESC LIMIT 1), 0)+1;
 INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_id, npc_option_npcflag, action_menu_id, action_poi_id, box_coded, box_money, box_text) VALUES
@@ -37,5 +39,5 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 UPDATE creature_template SET gossip_menu_id = @GOPTION, npcflag = npcflag|1, AIName = 'SmartAI' WHERE Entry = @BUFFNPC;
 
 REPLACE INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`) VALUES 
-('15121977', '190005', '1', '1', '1', '0', '0', '1594.71', '-4404.57', '7.03082', '2.01403', '300', '0', '0', '6495', '0', '0', '0', '0', '0'),
-('15121978', '190005', '0', '1', '1', '0', '0', '-8822.33', '630.718', '94.8776', '3.8272', '300', '0', '0', '6495', '0', '0', '0', '0', '0');
+('15121977', @BUFFNPC, '1', '1', '1', '0', '0', '1594.71', '-4404.57', '7.03082', '2.01403', '300', '0', '0', '6495', '0', '0', '0', '0', '0'),
+('15121978', @BUFFNPC, '0', '1', '1', '0', '0', '-8823.335938 ', '648.150085 ', '94.524849', '4.943174', '300', '0', '0', '6495', '0', '0', '0', '0', '0');
