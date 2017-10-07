@@ -7,17 +7,19 @@ SET
 @Jewelcrafting  := 900070,
 @Leatherworking := 900071,
 @Tailoring      := 900074,
-@Cooking        := 900085;
-REPLACE INTO `creature_template` (entry,modelid1,name,subname,minlevel,maxlevel,faction,npcflag,InhabitType) VALUES
-(@Alchemy,163,"Alchemy mats","Vendor",80,80,35,128,3),
-(@Blacksmithing,163,"Blacksmithing mats","Vendor",80,80,35,128,3),
-(@Enchanting,163,"Enchanting mats","Vendor",80,80,35,128,3),
-(@Engineering,163,"Engineering mats","Vendor",80,80,35,128,3),
-(@Inscription,163,"Inscription mats","Vendor",80,80,35,128,3),
-(@Jewelcrafting,163,"Jewelcrafting mats","Vendor",80,80,35,128,3),
-(@Leatherworking,163,"Leatherworking mats","Vendor",80,80,35,128,3),
-(@Tailoring ,163,"Tailoring mats","Vendor",80,80,35,128,3),
-(@Cooking,163,"Cooking mats","Vendor",80,80,35,128,3);
+@Cooking        := 900085,
+@NAME           := "Sart Sweettoe";
+
+REPLACE INTO `creature_template` (entry,modelid1,subname,name,minlevel,maxlevel,faction,npcflag,InhabitType) VALUES
+(@Alchemy,163,"Alchemy Materials",@NAME,80,80,35,128,3),
+(@Blacksmithing,163,"Blacksmithing Materials",@NAME,80,80,35,128,3),
+(@Enchanting,163,"Enchanting Materials",@NAME,80,80,35,128,3),
+(@Engineering,163,"Engineering Materials",@NAME,80,80,35,128,3),
+(@Inscription,163,"Inscription Materials",@NAME,80,80,35,128,3),
+(@Jewelcrafting,163,"Jewelcrafting Materials",@NAME,80,80,35,128,3),
+(@Leatherworking,163,"Leatherworking Materials",@NAME,80,80,35,128,3),
+(@Tailoring ,163,"Tailoring Materials",@NAME,80,80,35,128,3),
+(@Cooking,163,"Cooking Materials",@NAME,80,80,35,128,3);
 
 REPLACE INTO `npc_vendor` (`entry`,`slot`,`item`,`maxcount`,`incrtime`,`extendedcost`) VALUES
  (@Jewelcrafting, '0', '41596', '0', '0', '0'),
