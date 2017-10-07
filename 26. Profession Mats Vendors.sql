@@ -8,7 +8,39 @@ SET
 @Leatherworking := 900071,
 @Tailoring      := 900074,
 @Cooking        := 900085,
-@NAME           := "Sart Sweettoe";
+@NAME           := "Sartie Sweettoe";
+
+
+DELETE FROM creature WHERE id = @Alchemy;
+DELETE FROM creature WHERE id = @Blacksmithing;
+DELETE FROM creature WHERE id = @Enchanting;
+DELETE FROM creature WHERE id = @Engineering;
+DELETE FROM creature WHERE id = @Inscription;
+DELETE FROM creature WHERE id = @Jewelcrafting;
+DELETE FROM creature WHERE id = @Leatherworking;
+DELETE FROM creature WHERE id = @Tailoring;
+DELETE FROM creature WHERE id = @Cooking;
+
+DELETE FROM creature_template WHERE entry = @Alchemy;
+DELETE FROM creature_template WHERE entry = @Blacksmithing;
+DELETE FROM creature_template WHERE entry = @Enchanting;
+DELETE FROM creature_template WHERE entry = @Engineering;
+DELETE FROM creature_template WHERE entry = @Inscription;
+DELETE FROM creature_template WHERE entry = @Jewelcrafting;
+DELETE FROM creature_template WHERE entry = @Leatherworking;
+DELETE FROM creature_template WHERE entry = @Tailoring;
+DELETE FROM creature_template WHERE entry = @Cooking;
+
+DELETE FROM npc_vendor WHERE entry = @Alchemy;
+DELETE FROM npc_vendor WHERE entry = @Blacksmithing;
+DELETE FROM npc_vendor WHERE entry = @Enchanting;
+DELETE FROM npc_vendor WHERE entry = @Engineering;
+DELETE FROM npc_vendor WHERE entry = @Inscription;
+DELETE FROM npc_vendor WHERE entry = @Jewelcrafting;
+DELETE FROM npc_vendor WHERE entry = @Leatherworking;
+DELETE FROM npc_vendor WHERE entry = @Tailoring;
+DELETE FROM npc_vendor WHERE entry = @Cooking;
+
 
 REPLACE INTO `creature_template` (entry,modelid1,subname,name,minlevel,maxlevel,faction,npcflag,InhabitType) VALUES
 (@Alchemy,163,"Alchemy Materials",@NAME,80,80,35,128,3),
@@ -1007,6 +1039,9 @@ REPLACE INTO `npc_vendor` (`entry`,`slot`,`item`,`maxcount`,`incrtime`,`extended
  (@Leatherworking, '0', '4304', '0', '0', '0'),
  (@Leatherworking, '0', '21887', '0', '0', '0'),
  (@Leatherworking, '0', '8170', '0', '0', '0');
+
+
+
 
 REPLACE INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawndist, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags) VALUE
  ('511853', @Alchemy, '0', '1', '1', '0', '0', '-8986.42', '761.01', '98.3301', '5.61438', '300', '0', '0', '1', '0', '0', '0', '0', '0'),
