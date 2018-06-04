@@ -2,9 +2,9 @@ SET
 @ENTRY1 = 600400,
 @ENTRY2 = 600500;
 
-REPLACE INTO `creature_template` (entry,modelid1,name,subname,minlevel,maxlevel,faction,npcflag,InhabitType) VALUES
-(@ENTRY2,31026,"Relentless Weapons","Vendor",80,80,35,128,3),
-(@ENTRY1,31029,"Furious Weapons","Vendor",80,80,35,128,3);
+REPLACE INTO `creature_template` (entry,modelid1,name,subname,minlevel,maxlevel,faction,npcflag) VALUES
+(@ENTRY2,31026,"Relentless Weapons","Vendor",80,80,35,128),
+(@ENTRY1,31029,"Furious Weapons","Vendor",80,80,35,128);
 
 REPLACE INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawndist, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags) VALUE
  ('15118900', '30885', '0', '1', '1', '0', '0', '-8774.54', '420.608', '103.921', '5.33007', '300', '0', '0', '5617', '7981', '0', '0', '0', '0'),

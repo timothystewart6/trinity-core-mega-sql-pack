@@ -22,8 +22,8 @@ DELETE FROM creature_template WHERE entry = @Trainer;
 DELETE FROM npc_trainer WHERE id = @Trainer;
 
 -- Create Trainer NPC
-INSERT INTO creature_template (entry,modelid1,name,subname,minlevel,maxlevel,faction,npcflag,scale,unit_class,trainer_type,type,inhabittype) VALUES
-(@Trainer,@MODEL,@NAME,@SUBNAME,80,80,35,51,1,2,2,7,3);
+INSERT INTO creature_template (entry,modelid1,name,subname,minlevel,maxlevel,faction,npcflag,scale,unit_class,trainer_type,type) VALUES
+(@Trainer,@MODEL,@NAME,@SUBNAME,80,80,35,51,1,2,2,7);
 
 -- Insert spells to trainer
 INSERT INTO npc_trainer (id,spellid) VALUES

@@ -15,8 +15,8 @@ SET
 @ID7    := 700007,
 @ID8    := 700008,
 @ID9    := 700009;
-REPLACE INTO `creature_template` (entry,modelid1,name,subname,minlevel,maxlevel,faction,npcflag,scale,AIName,InhabitType) VALUES
-(@ENTRY3,23428,"Special quests","Special server quest giver",80,80,35,2,0.2,"SmartAI",3),
+REPLACE INTO `creature_template` (entry,modelid1,name,subname,minlevel,maxlevel,faction,npcflag,scale,AIName) VALUES
+(@ENTRY3,23428,"Special quests","Special server quest giver",80,80,35,2,0.2,"SmartAI"),
 (@ENTRY4,23428,"Event Ends","Quester",80,80,35,2,0.2,"SmartAI",3),
 (@ENTRY5,23428,"Event Ends","Quester",80,80,35,2,0.2,"SmartAI",3),
 (@ENTRY6,23428,"Event Ends","Quester",80,80,35,2,0.2,"SmartAI",3),
