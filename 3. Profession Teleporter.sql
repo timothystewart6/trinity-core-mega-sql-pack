@@ -22,9 +22,9 @@ DELETE FROM smart_scripts WHERE entryorguid = @ENTRY2;
 DELETE FROM creature WHERE id = @ENTRY1;
 DELETE FROM creature WHERE id = @ENTRY2;
 
-REPLACE INTO `creature_template` (entry,modelid1,name,subname,iconname,gossip_menu_id,minlevel,maxlevel,faction,npcflag,scale,unit_class,unit_flags,type,ainame,inhabittype,flags_extra) VALUES 
-(@ENTRY1, 30414, @NAME, @SUBNAME, "Directions", 60000, 80, 80, 35, 3, 2.5, 1, 2, 7, "SmartAI", 3, 2),
-(@ENTRY2, 30414, @NAME, @SUBNAME, "Directions", 60001, 80, 80, 35, 3, 2.5, 0, 0, 7, "SmartAI", 3, 2);
+REPLACE INTO `creature_template` (entry,modelid1,name,subname,iconname,gossip_menu_id,minlevel,maxlevel,faction,npcflag,scale,unit_class,unit_flags,type,ainame,flags_extra) VALUES 
+(@ENTRY1, 30414, @NAME, @SUBNAME, "Directions", 60000, 80, 80, 35, 3, 2.5, 1, 2, 7, "SmartAI", 2),
+(@ENTRY2, 30414, @NAME, @SUBNAME, "Directions", 60001, 80, 80, 35, 3, 2.5, 0, 0, 7, "SmartAI", 2);
 
 REPLACE INTO `npc_text` (id,text0_0,em0_0) VALUES 
 (@TEXT_ID, '$BChoose your profession!$B', 6);

@@ -6,8 +6,8 @@ SET
 @PRICE_100  := 2408,
 @PRICE_50   := 2411;
 
-REPLACE INTO `creature_template` (entry,modelid1,name,subname,minlevel,maxlevel,faction,scale,npcflag,InhabitType) VALUES
-(@ENTRY,1460,"Event Vendor","Vendor",80,80,35,0.1,128,3);
+REPLACE INTO `creature_template` (entry,modelid1,name,subname,minlevel,maxlevel,faction,scale,npcflag) VALUES
+(@ENTRY,1460,"Event Vendor","Vendor",80,80,35,0.1,128);
 
 REPLACE INTO creature (guid, id, map, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawndist, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags) VALUE
 ('15011146', @ENTRY, '1', '1', '1', '0', '0', '1582.5', '-4419.81', '8.27874', '4.04398', '300', '0', '0', '1', '0', '0', '0', '0', '0'),

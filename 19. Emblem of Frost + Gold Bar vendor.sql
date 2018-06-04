@@ -1,8 +1,8 @@
 SET
 @ENTRY400 := 300400;
 
-REPLACE INTO `creature_template` (`entry`,`modelid1`,`name`,`subname`,`minlevel`,`maxlevel`,`faction`,`npcflag`,`scale`,`unit_flags`,`dynamicflags`,`trainer_type`,`type`,`type_flags`,`InhabitType`) VALUES
- (@ENTRY400, ' 23404', 'Misc Vendor', 'Vendor', '88', '88', '35', '4225', '0.3', '258', '0', '8', '7', '4', '7');
+REPLACE INTO `creature_template` (`entry`,`modelid1`,`name`,`subname`,`minlevel`,`maxlevel`,`faction`,`npcflag`,`scale`,`unit_flags`,`dynamicflags`,`trainer_type`,`type`,`type_flags`) VALUES
+ (@ENTRY400, ' 23404', 'Misc Vendor', 'Vendor', '88', '88', '35', '4225', '0.3', '258', '0', '8', '7', '4');
 
 REPLACE INTO `npc_vendor` (`entry`,`slot`,`item`,`maxcount`,`incrtime`,`extendedcost`,`verifiedbuild`,`sort`) VALUES
  (@ENTRY400, '0', '101001', '0', '0', '0', '0', '0'),
